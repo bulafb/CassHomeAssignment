@@ -7,7 +7,7 @@ Feature: Register API
 @api_register_test
   Scenario Outline: Register test API successful scenario
     Given I post into register API with valid request
-    Then I see a <status_code_returned> status code returned
+    When I see a <status_code_returned> status code returned
 
     Examples:
       |status_code_returned|
@@ -17,8 +17,8 @@ Feature: Register API
  @api_register_invalid
   Scenario Outline: Register API negative scenario
     Given I post into register API with empty request
-    Then I see a <status_code_returned> status code returned
-    And I see an <error_message>
+    When I see a <status_code_returned> status code returned
+    Then I see an <error_message>
 
     Examples:
       |status_code_returned|error_message             |
