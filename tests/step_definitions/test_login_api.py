@@ -88,7 +88,7 @@ def list_resource():
     )
 
 
-@then(parsers.parse('I see a {status_code} status code returned'))
+@when(parsers.parse('I see a {status_code} status code returned'))
 def status_code(status_code):
     assert TestContext.response_status_code == int(status_code),"status code returned is not as expected"
 

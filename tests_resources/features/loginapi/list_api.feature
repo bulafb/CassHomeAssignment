@@ -7,8 +7,8 @@ Feature: List resource
 @api_list_resource_test
   Scenario Outline: List resource
     Given I do a get list resource
-    Then I see a <status_code_returned> status code returned
-    And I can confirm that <data_id> and <data_name> is returned correctly
+    When I see a <status_code_returned> status code returned
+    Then I can confirm that <data_id> and <data_name> is returned correctly
 
     Examples:
       |status_code_returned|data_id  |data_name |
