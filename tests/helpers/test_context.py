@@ -4,3 +4,4 @@ class TestContext:
     response_data_name = ""
     response_data_id = ""
     error_message = ""
+    token = ""

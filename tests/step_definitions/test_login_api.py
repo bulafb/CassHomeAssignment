@@ -17,6 +17,7 @@ def login_user():
     response = LoginApi.login_call()
     response_json = response_to_json(response)
     TestContext.response_status_code = response.status_code
+    TestContext.token = response_json["token"]
     logging.info(
         "The response of Login request is:\n\n"
         + Endpoint.BASE_URL
@@ -63,6 +64,8 @@ def register_user():
     response = LoginApi.register_call()
     response_json = response_to_json(response)
     TestContext.response_status_code = response.status_code
+    TestContext.token = response_json["token"]
+    TestContext.id = response_json["id"]
     logging.info(
         "The response of Login request is:\n\n"
         + Endpoint.BASE_URL
@@ -86,6 +89,16 @@ def list_resource():
         + "\n\n"
         + json.dumps(response_json, indent=4)
     )
+
+@then("A token value is returned")
+def check_token():
+    assert TestContext.token is not None, "Token is not returned"
+
+
+@then("A token and id is returned")
+def check_token_id():
+    assert (TestContext.token is not None
+    and TestContext.id is not None), "Token and id is not returned"
 
 
 @when(parsers.parse('I see a {status_code} status code returned'))

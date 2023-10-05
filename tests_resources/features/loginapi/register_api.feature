@@ -8,6 +8,7 @@ Feature: Register API
   Scenario Outline: Register test API successful scenario
     Given I post into register API with valid request
     When I see a <status_code_returned> status code returned
+    Then A token and id is returned
 
     Examples:
       |status_code_returned|
