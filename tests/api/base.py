@@ -1,7 +1,6 @@
 import json
 import requests
 import config
-from tests_resources.test_data import test_data_staging
 
 class Endpoint:
 

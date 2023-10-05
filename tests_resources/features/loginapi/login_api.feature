@@ -8,6 +8,7 @@ Feature: Login API
   Scenario Outline: Login to API successful scenario
     Given I post into login API with valid request
     When I see a <status_code_returned> status code returned
+    Then A token value is returned
 
     Examples:
       |status_code_returned|
