@@ -19,7 +19,7 @@ def login_user():
     TestContext.response_status_code = response.status_code
     TestContext.token = response_json["token"]
     logging.info(
-        "The response of Login request is:\n\n"
+        "The response of valid Login request is:\n\n"
         + Endpoint.BASE_URL
         + api.ENDPOINT_LOGIN_USER
         + "\n\n"
@@ -35,7 +35,7 @@ def invalid_login_user():
     TestContext.response_status_code = response.status_code
     TestContext.error_message = response_json ["error"]
     logging.info(
-        "The response of Login request is:\n\n"
+        "The response of invalid Login request is:\n\n"
         + Endpoint.BASE_URL
         + api.ENDPOINT_LOGIN_USER
         + "\n\n"
@@ -51,7 +51,7 @@ def invalid_register_user():
     TestContext.response_status_code = response.status_code
     TestContext.error_message = response_json ["error"]
     logging.info(
-        "The response of Login request is:\n\n"
+        "The response of invalid Register request is:\n\n"
         + Endpoint.BASE_URL
         + api.ENDPOINT_REGISTER_USER
         + "\n\n"
@@ -67,7 +67,7 @@ def register_user():
     TestContext.token = response_json["token"]
     TestContext.id = response_json["id"]
     logging.info(
-        "The response of Login request is:\n\n"
+        "The response of valid Register request is:\n\n"
         + Endpoint.BASE_URL
         + api.ENDPOINT_REGISTER_USER
         + "\n\n"
@@ -83,7 +83,7 @@ def list_resource():
     TestContext.response_data_id =  response_json["data"][0]["id"]
     TestContext.response_data_name = response_json["data"][0]["name"]
     logging.info(
-        "The response of Login request is:\n\n"
+        "The response of Get List Resource is:\n\n"
         + Endpoint.BASE_URL
         + api.ENDPOINT_LIST_RESOURCE
         + "\n\n"

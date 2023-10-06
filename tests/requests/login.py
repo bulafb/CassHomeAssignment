@@ -26,6 +26,8 @@ class LoginApi(Endpoint):
         payload = Login.user_login()
         print(payload)
         json_data = json.dumps(payload)
+        logging.info("input request payload is \n\n")
+        logging.info(json_data)
         response = Endpoint.post_call(url, json_data)
         return response
 
@@ -43,6 +45,8 @@ class LoginApi(Endpoint):
         json_file = open('C:\\Users\\bular\\CassHomeAssignment\\tests_resources\\test_data\\register_payload.json','r')
         json_input = json_file.read()
         json_data = json.loads(json_input)
+        logging.info("input request payload is \n\n")
+        logging.info(json_data)
         response = Endpoint.post_call(url, json_data)
         return response
 

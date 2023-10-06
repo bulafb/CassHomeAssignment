@@ -12,6 +12,6 @@ class Login:
         password = test_data_staging.login_valid_data.get(constants.PASSWORD)
         payload = {
             "email": user_email,
-            'password': password
+            "password": password
         }
         return payload
