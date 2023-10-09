@@ -12,6 +12,7 @@ scenarios("loginapi/")
 
 """Step definitions - Login, Register API , List Resource"""
 
+
 @given("I post into login API with valid request")
 def login_user():
     response = LoginApi.login_call()
@@ -27,7 +28,6 @@ def login_user():
     )
 
 
-
 @given("I post into login API with empty request")
 def invalid_login_user():
     response = LoginApi.invalid_login_call()
@@ -41,7 +41,6 @@ def invalid_login_user():
         + "\n\n"
         + json.dumps(response_json, indent=4)
     )
-
 
 
 @given('I post into register API with empty request')
@@ -89,6 +88,7 @@ def list_resource():
         + "\n\n"
         + json.dumps(response_json, indent=4)
     )
+
 
 @then("A token value is returned")
 def check_token():

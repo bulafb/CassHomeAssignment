@@ -14,4 +14,21 @@ class Login:
             "email": user_email,
             "password": password
         }
+        json_payload = json.dumps(payload)
+        logging.info("The request payoad for valid login is "
+                     + json_payload
+                     )
+        return payload
+
+    def register_login():
+        user_email = test_data_staging.register_valid_data.get(constants.EMAIL)
+        password = test_data_staging.register_valid_data.get(constants.PASSWORD)
+        payload = {
+            "email": user_email,
+            "password": password
+        }
+        json_payload = json.dumps(payload)
+        logging.info("The request payoad for valid register is "
+                     + json_payload
+                     )
         return payload

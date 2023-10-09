@@ -9,9 +9,9 @@ import json
 class LoginApi(Endpoint):
 
     @staticmethod
-    def login_call():
+    def login_call_json_read():
         url = LoginApi.get_login_url()
-        json_file = open('C:\\Users\\bular\\CassHomeAssignment\\tests_resources\\test_data\\login_payload.json','r')
+        json_file = open('C:\\Users\\bular\\CassHomeAssignment\\tests_resources\\test_data\\login_payload.json', 'r')
         json_input = json_file.read()
         json_data = json.loads(json_input)
         logging.info("input request payload is \n\n")
@@ -19,16 +19,11 @@ class LoginApi(Endpoint):
         response = Endpoint.post_call(url, json_data)
         return response
 
-
     @staticmethod
-    def login_call_new():
+    def login_call():
         url = LoginApi.get_login_url()
         payload = Login.user_login()
-        print(payload)
-        json_data = json.dumps(payload)
-        logging.info("input request payload is \n\n")
-        logging.info(json_data)
-        response = Endpoint.post_call(url, json_data)
+        response = Endpoint.post_call(url, payload)
         return response
 
 
